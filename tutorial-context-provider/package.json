@@ -1,0 +1,33 @@
+{
+    "name": "@consta/tutorial-context-provider",
+    "version": "0.0.1",
+    "author": "Gazprom Neft",
+    "description": "A shared context",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "",
+        "tsc": "tsc",
+        "test": "npm prune && npm run test:unit",
+        "test:unit": "jest",
+        "test:unit:watch": "jest --watch",
+        "test:unit:clear": "jest --clearCache"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^12.0.0",
+        "@testing-library/react-hooks": "^7.0.1",
+        "@types/classnames": "^2.2.11",
+        "@types/jest": "^26.0.24",
+        "@types/react": "^17.0.3",
+        "jest": "^27.0.6",
+        "mocker-api": "^2.9.0",
+        "prettier": "^2.3.2",
+        "ts-jest": "^27.0.4",
+        "ts-loader": "^8.0.18",
+        "typescript": "^4.2.3"
+    },
+    "dependencies": {
+        "react": "^17.0.1"
+    }
+}
