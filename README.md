@@ -1,14 +1,12 @@
-# Портальный архетип приложения с контекстной зависимостью
+# Портальный архетип приложения с контекстной зависимостью | Дизайн-система Consta
 
-> В этом репозитории лежит пример приложения, который вы можете либо доработать под собственные нужны, либо создать на его основе что-то новое.
+В этом репозитории лежит пример приложения, которое можно использовать как шаблон: доработать или создать на его основе что-то новое.
 
-## Кому пригодится
-
-По сути, это расширенная версия [portal-template](https://github.com/consta-design-system/portal-template.git), в которой реализована возможность ходить приложениям друг к другу за данными, в т.ч. в родительское.
+По сути, это расширенная версия [portal-template](https://github.com/consta-design-system/portal-template.git), в которой реализована возможность для приложений ходить друг к другу за данными, в том числе в родительское.
 
 ## Что такое контекстный провайдер
 
-> Контекстный провайдер - это модуль, в котором экспортируется переменная, обернутая в `createContext`. <br />
+Контекстный провайдер — это модуль, в котором экспортируется переменная, обернутая в `createContext`.
 
 Пример:
 
@@ -23,7 +21,7 @@ type Context = {
 // Данные, которые будут браться по умолчанию
 const defaultData = {name: 'Unknown'};
 
-// Rонтекстный провайдер
+// Контекстный провайдер
 const ContextProvider = createContext<Context>(defaultData);
 
 export {ContextProvider};
@@ -31,7 +29,7 @@ export {ContextProvider};
 
 ## Как прокидывать данные
 
-Пример как прокинуть данные в родительском приложении:
+Пример того, как можно прокинуть данные в родительском приложении:
 
 ```ts
 import React, {FunctionComponent} from 'react';
@@ -48,7 +46,7 @@ const Root: FunctionComponent<Props> = () => (
 
 ## Как получать данные
 
-Пример как получить данные из родительского приложения:
+Пример того, как получить данные из родительского приложения:
 
 ```tsx
 import React, {useContext, FunctionComponent} from 'react';
@@ -71,7 +69,7 @@ const Example: FunctionComponent<Props> = (props) => {
 
 1. Установите контекстную зависимость
 
-Если на этом шаге прав для выполнения команды `npm link` будет недостаточно, то вы можете продолжить установку от рута (`sudo npm link`) либо использовать [nwm](https://github.com/nvm-sh/nvm)
+Если на этом шаге прав для выполнения команды `npm link` будет недостаточно, то вы можете продолжить установку от рута (`sudo npm link`) либо использовать [nwm](https://github.com/nvm-sh/nvm).
 
 ```
 cd tutorial-context-provider
@@ -93,4 +91,4 @@ ln -s "$(pwd)/tutorial-context-provider" tutorial/node_modules/\@consta
 ln -s "$(pwd)/tutorial-context-provider" tutorial-video/node_modules/\@consta
 ```
 
-2. Перейдите в `package.json` tutorial и tutorial-video и замените название версии `"@consta/tutorial-context-provider": "file:..."` на `"@consta/tutorial-context-provider": "0.0.1"`.
+2. Перейдите в `package.json` в директориях tutorial и tutorial-video и замените название версии `"@consta/tutorial-context-provider": "file:..."` на `"@consta/tutorial-context-provider": "0.0.1"`.
